@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-10",
+  "status": "verified",
+  "upstream_commit": "190caae7c7eebfc2c95fceef310d30136e001d7c",
+  "upstream_directory": "tools/fine_grained_profile",
+  "unchanged_files": [
+    "plugin.cc",
+    "trace_writer.h",
+    "test_plugin.cc",
+    "check_plugin.py",
+    "time_windows.py",
+    "nccl/common.h",
+    "nccl/err.h",
+    "nccl/profiler.h",
+    "nccl/profiler_v5.h",
+    "nccl/profiler_v6.h"
+  ],
+  "adaptations": [
+    "standalone aggregate.py and trace_reader.py remove fixed Megatron/8-rank manifest requirements",
+    "optional context.py exposes existing step tags",
+    "standalone Makefile and Chinese README"
+  ],
+  "validation": {
+    "build": "local macOS C++17 build passed; rebuild on Linux before use",
+    "cpu_plugin_regression": "passed",
+    "aggregation_unit_tests": 11,
+    "real_trace_replay": "existing TP1PP8DP1 repeat-001 step6-25 from run-20260909-001; all 64 matrix cells match analyzer-001",
+    "real_trace_selected_send_bytes": 18790499840,
+    "window_us": 1000,
+    "window_byte_conservation": "passed",
+    "new_gpu_runs": false
+  },
+  "files_sha256": {
+    ".gitignore": "3a4156724c352eaa7e29ac6c0237e1f2a4778fd6736f2e2b04025755ab08860c",
+    "LICENSE": "1e7682fdbec567b19258cfd464fe20b95d1ca57e19486bc3528b05612bda05e9",
+    "Makefile": "0e300cf0c51d00cad1c92d09e257ea86dc5a89eff0ab9a203feba0a25076f250",
+    "README.md": "4d505a68e017505f8df40ef79324d309e0e2d602797d4279da532511495ba156",
+    "aggregate.py": "1e689a42fd06679c16978662a2c1dc97e09b4a1ecc0df05b8dc247e164ede3f7",
+    "check_plugin.py": "edbc2e334114a7618d7c5b5b68c54fcbad03793bf234eecfcf26e9bb5f30af1f",
+    "context.py": "a5419832dad6e3065f842b83915538305eb60153e99958611d1080d533b61464",
+    "nccl/common.h": "877a8b937727f293c59777c605d46224cbc27d7829ec2f833de0af08b8ebf782",
+    "nccl/err.h": "92a2379f9801f1c967e65a32f5b9af7a93b086281022f33207bfc6e3b147ce90",
+    "nccl/profiler.h": "1e49e205c7477a3b33927bd1b0ec39d7c5943cdee1cf1f7b0ba3e176d013f5e8",
+    "nccl/profiler_v5.h": "d952deeca89aafb780e08f34ce21138c70520f899477ba57b30b2cf0a241eb06",
+    "nccl/profiler_v6.h": "c1e739b2e34e182a9d3b2a5e9e02f8fa86c9dd8d47f5b417f84f8fa71d2bc824",
+    "plugin.cc": "855a5bb5e97169f2109102690efecf7c2cf94e4b3523e5e098768d448b92ca92",
+    "test_aggregate.py": "46226df2cb3ad6d687280ac1043c330b705f05cbde3a994e4ca411b98c87ccdc",
+    "test_plugin.cc": "85e5c7ce67c2f5fd15e98c7f6fa2aaeca995c1e38ccfdaf60fa11a24cfa7f376",
+    "time_windows.py": "e1e879fc776511452efa2b344b0ef5cc042f6d5867c7817c9c6e086f76d39742",
+    "trace_reader.py": "41fbe0762e85e25b063bb9b064ec855094beee131f846b69c26ed2b92c4f9c69",
+    "trace_writer.h": "8034864bb032a4b446bcf377a665fdb7f51c713f5b4dd6a45fe07ed04ea9b6c2"
+  }
+}
